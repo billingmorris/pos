@@ -1,0 +1,37 @@
+<!-- pos_cogs_calculation/views/pos_order_views.xml -->
+<odoo>
+    <!-- Inherit POS Order Form View -->
+    <record id="view_pos_order_form_inherit" model="ir.ui.view">
+        <field name="name">pos.order.form.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="total_cost_of_goods_sold"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add Report Tree View -->
+    <record id="view_pos_cogs_report_tree" model="ir.ui.view">
+        <field name="name">pos.cogs.report.tree</field>
+        <field name="model">pos.cogs.report</field>
+        <field name="arch" type="xml">
+            <tree string="POS COGS Report">
+                <field name="order_id"/>
+                <field name="date_order"/>
+                <field name="total_cost_of_goods_sold"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Add Report Menu Item -->
+    <menuitem id="menu_pos_cogs_report" name="POS COGS Report" parent="point_of_sale.menu_point_of_sale_report" action="action_pos_cogs_report"/>
+
+    <!-- Add Report Action -->
+    <record id="action_pos_cogs_report" model="ir.actions.act_window">
+        <field name="name">POS COGS Report</field>
+        <field name="res_model">pos.cogs.report</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>
