@@ -9,7 +9,7 @@
     'category': 'Point of Sale',
     'depends': ['point_of_sale'],
     'data': [
-        'security/pos_cogs_security.xml',  # Add security rules
+#        'security/pos_cogs_security.xml',  # Add security rules
         'views/pos_order_views.xml',
     ],
     'installable': True,
