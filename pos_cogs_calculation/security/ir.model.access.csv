@@ -1,0 +1,2 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_pos_order_group_view_total_cost_of_goods_sold","Access POS Order for Total Cost of Goods Sold","model_pos_order","pos_cogs_calculation.group_view_total_cost_of_goods_sold","1","0","0","0"
