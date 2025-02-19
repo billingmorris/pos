@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='amount_total']" position="after">
-                <field name="total_cost_of_goods_sold"/>
+                <field name="total_cost_of_goods_sold" groups="pos_cogs_calculation.group_view_total_cost_of_goods_sold"/>
             </xpath>
         </field>
     </record>
