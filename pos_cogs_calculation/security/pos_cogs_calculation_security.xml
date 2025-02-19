@@ -1,0 +1,8 @@
+<odoo>
+    <!-- Define a new security group -->
+    <record id="group_view_total_cost_of_goods_sold" model="res.groups">
+        <field name="name">View Total Cost of Goods Sold</field>
+        <field name="category_id" ref="base.module_category_sales"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/> <!-- Assign the group to the admin user by default -->
+    </record>
+</odoo>
