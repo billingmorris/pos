@@ -3,8 +3,11 @@ from odoo import models, fields, api
 
 class PosOrder(models.Model):
     _inherit = 'pos.order'
-
-    total_cost_of_goods_sold = fields.Float(string='Total Cost of Goods Sold', readonly=True)
+    total_cost_of_goods_sold = fields.Float(
+        string='Total Cost of Goods Sold',
+        groups='pos_cogs_calculation.group_view_total_cost_of_goods_sold',  # Restrict access
+    )
+    #total_cost_of_goods_sold = fields.Float(string='Total Cost of Goods Sold', readonly=True)
 
     def _calculate_cost_of_goods_sold(self):
         total_cost = 0
