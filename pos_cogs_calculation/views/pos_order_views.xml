@@ -20,6 +20,9 @@
             <xpath expr="//field[@name='amount_total']" position="after">
                 <field name="total_cost_of_goods_sold" optional="hide"/>
             </xpath>
+            <xpath expr="//sheet" position="inside">
+                <button string="Update COGS" type="object" name="update_existing_orders_cogs" class="btn-primary"/>
+            </xpath>
         </field>
     </record>
 </odoo>
