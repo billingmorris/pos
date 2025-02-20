@@ -23,4 +23,12 @@ class PosOrder(models.Model):
         total_cost = self._calculate_cost_of_goods_sold()
         self.write({'total_cost_of_goods_sold': total_cost})
         return res
+class PosOrderLine(models.Model):
+    _inherit = 'pos.order.line'
 
+    standard_price = fields.Float(
+        string='Cost Price',
+        related='product_id.standard_price',
+        readonly=True,
+        store=True,
+    )
