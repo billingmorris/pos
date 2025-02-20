@@ -1,36 +1,38 @@
 <!-- pos_cogs_calculation/views/pos_order_views.xml -->
 <odoo>
-    <!-- Inherit POS Order Form View -->
-    <record id="view_pos_order_form_inherit" model="ir.ui.view">
-        <field name="name">pos.order.form.inherit</field>
-        <field name="model">pos.order</field>
-        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='amount_total']" position="after">
-                <field name="total_cost_of_goods_sold" groups="pos_cogs_calculation.group_view_total_cost_of_goods_sold"/>
-            </xpath>
-        </field>
-    </record>
-    <!-- Inherit POS Order Tree View -->
-    <record id="view_pos_order_tree_inherit" model="ir.ui.view">
-        <field name="name">pos.order.tree.inherit</field>
-        <field name="model">pos.order</field>
-        <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
-        <field name="arch" type="xml">
-            <xpath expr="//header" position="inside">
-                <button string="Update COGS" type="object" name="update_existing_orders_cogs" class="btn-primary"/>
-            </xpath>
-            <xpath expr="//field[@name='amount_total']" position="after">
-                <field name="total_cost_of_goods_sold" optional="hide"/>
-            </xpath>
+    <data>
+        <!-- Inherit POS Order Form View -->
+        <record id="view_pos_order_form_inherit" model="ir.ui.view">
+            <field name="name">pos.order.form.inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_total']" position="after">
+                    <field name="total_cost_of_goods_sold" groups="pos_cogs_calculation.group_view_total_cost_of_goods_sold"/>
+                </xpath>
+            </field>
+        </record>
+        <!-- Inherit POS Order Tree View -->
+        <record id="view_pos_order_tree_inherit" model="ir.ui.view">
+            <field name="name">pos.order.tree.inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button string="Update COGS" type="object" name="update_existing_orders_cogs" class="btn-primary"/>
+                </xpath>
+                <xpath expr="//field[@name='amount_total']" position="after">
+                    <field name="total_cost_of_goods_sold" optional="hide"/>
+                </xpath>
             
-            <xpath expr="//tree" position="inside">
+                <xpath expr="//tree" position="inside">
                     <button name="update_existing_orders_cogs" 
                             string="Calculate COGS" 
                             type="object" 
                             class="btn-primary" 
                             icon="fa-check"/>
                 </xpath>
-        </field>
-    </record>
+            </field>
+        </record>
+    </data>
 </odoo>
