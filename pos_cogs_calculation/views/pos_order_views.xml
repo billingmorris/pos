@@ -17,12 +17,13 @@
         <field name="model">pos.order</field>
         <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='amount_total']" position="after">
-                <field name="total_cost_of_goods_sold" optional="hide"/>
-            </xpath>
             <xpath expr="//header" position="inside">
                 <button string="Update COGS" type="object" name="update_existing_orders_cogs" class="btn-primary"/>
             </xpath>
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="total_cost_of_goods_sold" optional="hide"/>
+            </xpath>
+            
             <xpath expr="//tree" position="inside">
                     <button name="update_existing_orders_cogs" 
                             string="Calculate COGS" 
