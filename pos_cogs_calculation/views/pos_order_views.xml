@@ -23,6 +23,13 @@
             <xpath expr="//header" position="inside">
                 <button string="Update COGS" type="object" name="update_existing_orders_cogs" class="btn-primary"/>
             </xpath>
+            <xpath expr="//tree" position="inside">
+                    <button name="update_existing_orders_cogs" 
+                            string="Calculate COGS" 
+                            type="object" 
+                            class="btn-primary" 
+                            icon="fa-check"/>
+                </xpath>
         </field>
     </record>
 </odoo>
