@@ -25,14 +25,7 @@
                 <xpath expr="//field[@name='amount_total']" position="after">
                     <field name="total_cost_of_goods_sold" optional="hide"/>
                 </xpath>
-            
-                <xpath expr="//tree" position="inside">
-                    <button name="update_existing_orders_cogs" 
-                            string="Calculate COGS" 
-                            type="object" 
-                            class="btn-primary" 
-                            icon="fa-check"/>
-                </xpath>
+    
             </field>
         </record>
         
