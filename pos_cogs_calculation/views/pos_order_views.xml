@@ -38,6 +38,18 @@
             </xpath>
         </field>
     </record>
+
+    <!-- Inherit POS Order Line Form View -->
+    <record id="view_pos_order_line_form_inherit" model="ir.ui.view">
+        <field name="name">pos.order.line.form.inherit</field>
+        <field name="model">pos.order.line</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_unit']" position="after">
+                <field name="standard_price" string="Cost Price"/>
+            </xpath>
+        </field>
+    </record>
         
     </data>
 </odoo>
