@@ -8,8 +8,8 @@
         This module adds a field to calculate and display the total cost of goods sold
         in POS orders, with restricted access to authorized users.
     """,
-    'author': 'Your Name',
-    'website': 'https://yourwebsite.com',
+    'author': 'Billing Morris',
+    'website': 'https://www.billingmorris.com',
     'depends': ['point_of_sale'],
     'data': [
         'security/pos_cogs_calculation_security.xml',
