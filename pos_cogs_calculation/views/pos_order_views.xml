@@ -10,6 +10,9 @@
                 <xpath expr="//field[@name='amount_total']" position="after">
                     <field name="total_cost_of_goods_sold" groups="pos_cogs_calculation.group_view_total_cost_of_goods_sold"/>
                 </xpath>
+                <xpath expr="//sheet" position="inside">
+                <button string="Update COGS" type="object" name="update_existing_orders_cogs" class="btn-primary"/>
+            </xpath>
             </field>
         </record>
         <!-- Inherit POS Order Tree View -->
@@ -32,21 +35,6 @@
                 </xpath>
             </field>
         </record>
-        <!-- Inherit the pos.order tree view to add a button in the header -->
-        <record id="view_pos_order_tree_inherit_header_button" model="ir.ui.view">
-            <field name="name">pos.order.tree.inherit.header.button</field>
-            <field name="model">pos.order</field>
-            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
-            <field name="arch" type="xml">
-                <!-- Add a button to the header of the tree view -->
-                <xpath expr="//tree//header" position="inside">
-                    <button name="update_existing_orders_cogs"
-                            string="Calculate COGS"
-                            type="object"
-                            class="btn-primary"
-                            icon="fa-check"/>
-                </xpath>
-            </field>
-        </record>
+        
     </data>
 </odoo>
