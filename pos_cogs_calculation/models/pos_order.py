@@ -23,3 +23,14 @@ class PosOrder(models.Model):
         total_cost = self._calculate_cost_of_goods_sold()
         self.write({'total_cost_of_goods_sold': total_cost})
         return res
+
+    def update_existing_orders_cogs(self):
+        """
+        Custom method to update the total_cost_of_goods_sold field
+        for existing POS orders where total_cost_of_goods_sold is 0.
+        """
+        # Filter orders where total_cost_of_goods_sold is 0
+        orders_to_update = self.search([('total_cost_of_goods_sold', '=', 0)])
+        for order in orders_to_update:
+            total_cost = order._calculate_cost_of_goods_sold()
+            order.write({'total_cost_of_goods_sold': total_cost})
