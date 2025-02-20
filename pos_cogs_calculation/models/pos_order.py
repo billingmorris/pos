@@ -24,10 +24,6 @@ class PosOrder(models.Model):
         self.write({'total_cost_of_goods_sold': total_cost})
         return res
 
-    import logging
-
-    _logger = logging.getLogger(__name__)
-    
     def update_existing_orders_cogs(self):
         """
         Custom method to update the total_cost_of_goods_sold field
