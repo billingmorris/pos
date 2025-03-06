@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Extend the POS receipt template -->
+    <t t-extend="OrderReceipt">
+        <!-- Append the partner's name to the receipt -->
+        <t t-jquery=".receipt-order" t-operation="append">
+            <!-- Check if a partner is associated with the order -->
+            <div t-if="order.partner_id" class="partner-name">
+                <strong>Cliente:</strong> <span t-esc="order.partner_id.name"/>
+            </div>
+        </t>
+    </t>
+</templates>
