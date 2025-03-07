@@ -2,11 +2,11 @@
 <templates id="template" xml:space="preserve">
     <!-- Extend the POS receipt template -->
     <t t-extend="OrderReceipt">
-        <!-- Append the partner's name to the receipt -->
-        <t t-jquery=".receipt-order" t-operation="append">
+        <!-- Insert the partner name after the company info and before the products -->
+        <t t-jquery=".receipt-order .receipt-header" t-operation="after">
             <!-- Check if a partner is associated with the order -->
-            <div> <!--t-if="order.partner_id" class="partner-name"-->
-                <strong>Cliente:</strong> <span t-esc="order.partner_id.name"/>
+            <div t-if="order.partner_id" class="partner-name" style="margin-bottom: 10px;">
+                <strong>Customer:</strong> <span t-esc="order.partner_id.name"/>
             </div>
         </t>
     </t>
