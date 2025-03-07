@@ -5,7 +5,7 @@
         <!-- Append the partner's name to the receipt -->
         <t t-jquery=".receipt-order" t-operation="append">
             <!-- Check if a partner is associated with the order -->
-            <div t-if="order.partner_id" class="partner-name">
+            <div> <!--t-if="order.partner_id" class="partner-name"-->
                 <strong>Cliente:</strong> <span t-esc="order.partner_id.name"/>
             </div>
         </t>
