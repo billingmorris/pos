@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<templates id="point_of_sale.template" xml:space="preserve">
+<templates id="template" xml:space="preserve">
+    <!-- Extend the POS receipt template -->
     <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <!-- Insert the partner name before the order lines -->
         <xpath expr="//div[hasclass('orderlines')]" position="before">
-            
-            <div t-if="receipt.partner_id" class="partner-name" style="margin-bottom: 10px;">
-                <strong>Customer:</strong> <span t-esc="receipt.partner_id.name"/>
+            <!-- Check if a partner is associated with the order -->
+            <div t-if="receipt.partner" class="partner-name" style="margin-bottom: 10px;">
+                <strong>Customer:</strong> <span t-esc="receipt.partner.name"/>
             </div>
-            
-            
-        </xpath>         
+        </xpath>
     </t>
 </templates>
