@@ -4,6 +4,18 @@
     <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
         <!-- Insert the partner name before the order lines -->
         <xpath expr="//div[hasclass('orderlines')]" position="before">
+            <div style="margin-bottom:10px">
+                <t t-if="receipt.partner_id">
+                    <div>Contact:<t t-esc="receipt.partner_id.name" /></div>
+                </t>
+            </div>
+
+            <div style="margin-bottom:10px">
+                <t t-if="order.partner_id">
+                    <div>Contact:<t t-esc="order.partner_id.name" /></div>
+                </t>
+            </div>
+            
             <!-- Check if a partner is associated with the order -->
             <div class="partner-name" style="margin-bottom: 10px;">
                 <strong>Customer:</strong> <span t-esc="receipt.partner.name"/>
