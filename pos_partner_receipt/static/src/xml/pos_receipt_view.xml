@@ -11,9 +11,9 @@
                 <span t-esc="env.pos.get_client().name"/><br/>
             </div>
         </t>
-        <t t-if="env.pos.get_client().mobile">
+        <t t-if="env.pos.get_client().phone">
                 <div style="margin-bottom: 10px;">Teléfono: 
-                <span t-esc="env.pos.get_client().mobile"/><br/>
+                <span t-esc="env.pos.get_client().phone"/><br/>
                 </div>
         </t>
             
