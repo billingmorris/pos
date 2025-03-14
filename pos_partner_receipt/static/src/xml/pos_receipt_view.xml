@@ -4,19 +4,19 @@
     <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
         <!-- Insert the partner name before the order lines -->
         <xpath expr="//div[hasclass('orderlines')]" position="before">
-        
+        <div style="center">------------------------------------</div>
         <t t-if="env.pos.get_client().name">
                 
-            <div style="margin-bottom: 10px;">Cliente: 
+            <div style="margin-bottom: 9px;">Cliente: 
                 <span t-esc="env.pos.get_client().name"/><br/>
             </div>
         </t>
         <t t-if="env.pos.get_client().phone">
-                <div style="margin-bottom: 10px;">Teléfono: 
+                <div style="margin-bottom: 9px;">Teléfono: 
                 <span t-esc="env.pos.get_client().phone"/><br/>
                 </div>
         </t>
-            
+        <div style="center">------------------------------------</div>
             
             
         </xpath>
