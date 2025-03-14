@@ -12,7 +12,7 @@
 
             <div style="margin-bottom:10px">
                 <t t-if="order.partner_id">
-                    <div>Contact:<t t-esc="order.partner_id.name" /></div>
+                    <div>Contact:<t t-esc="receipt.partner_id.name" /></div>
                 </t>
             </div>
             
