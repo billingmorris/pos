@@ -7,8 +7,9 @@
 
          <div>111</div>   
 
-            <div class="js_customer_name">Nombre: <t t-esc="partner_id.name" /></div>
-            
+            <div t-if="receipt.partner" class="partner-name" style="margin-bottom: 10px;">
+                <strong>Customer:</strong> <span t-esc="receipt.partner.name"/>
+            </div>
             
             
             
