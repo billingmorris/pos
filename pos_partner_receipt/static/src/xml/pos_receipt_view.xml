@@ -10,11 +10,7 @@
                 </t>
             </div>
 
-            <div style="margin-bottom:10px">
-                <t t-if="order.partner_id">
-                    <div>Contact:<t t-esc="receipt.partner_id.name" /></div>
-                </t>
-            </div>
+            
             
             <!-- Check if a partner is associated with the order -->
             <div class="partner-name" style="margin-bottom: 10px;">
