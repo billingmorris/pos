@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <!-- Extend the POS receipt template -->
-    <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
-        <!-- Insert the partner name before the order lines -->
-        <xpath expr="//div[hasclass('orderlines')]" position="before">
+    <!-- Override the entire POS receipt template -->
+    <t t-name="OrderReceipt">
+        <div class="receipt-order">
+            <!-- Company Information -->
+            <div class="receipt-header">
+                <t t-if="receipt.company.name">
+                    <div t-esc="receipt.company.name"/>
+                </t>
+                <t t-if="receipt.company.address">
+                    <div t-esc="receipt.company.address"/>
+                </t>
+                <t t-if="receipt.company.phone">
+                    <div t-esc="receipt.company.phone"/>
+                </t>
+            </div>
 
-         <div>111</div>   
-
-            <div t-if="receipt.partner" class="partner-name" >
+            <!-- Partner Name -->
+            <div t-if="receipt.partner" class="partner-name" style="margin-bottom: 10px;">
                 <strong>Customer:</strong> <span t-esc="receipt.partner.name"/>
             </div>
-            
-            
-            
-        </xpath>
+
+            <!-- Products -->
+            <div class="orderlines">
+                <t t-foreach="receipt.lines" t-as="line">
+                    <div class="receipt-line">
+                        <div class="product-name" t-esc="line.product_name"/>
+                        <div class="product-price" t-esc="line.price"/>
+                    </div>
+                </t>
+            </div>
+
+            <!-- Total -->
+            <div class="receipt-total">
+                <strong>Total:</strong> <span t-esc="receipt.total"/>
+            </div>
+        </div>
     </t>
 </templates>
