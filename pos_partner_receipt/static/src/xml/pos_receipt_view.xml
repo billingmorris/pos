@@ -5,7 +5,7 @@
         <!-- Insert the partner name before the order lines -->
         <xpath expr="//div[hasclass('orderlines')]" position="before">
             <!-- Check if a partner is associated with the order -->
-            <div t-if="receipt.partner" class="partner-name" style="margin-bottom: 10px;">
+            <div class="partner-name" style="margin-bottom: 10px;">
                 <strong>Customer:</strong> <span t-esc="receipt.partner.name"/>
             </div>
         </xpath>
