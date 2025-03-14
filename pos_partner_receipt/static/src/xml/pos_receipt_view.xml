@@ -7,13 +7,15 @@
         
         <t t-if="env.pos.get_client().name">
                 
-            <div style="margin-bottom: 10px;"><strong>Cliente:</strong>
+            <div style="margin-bottom: 10px;">Cliente: 
                 <span t-esc="env.pos.get_client().name"/><br/>
             </div>
         </t>
-         <div t-if="receipt.partner" class="partner-name" style="margin-bottom: 10px;">
-                <strong>Customer:</strong> <span t-esc="receipt.partner.name"/>
-            </div>
+        <t t-if="env.pos.get_client().mobile">
+                <div style="margin-bottom: 10px;">Teléfono: 
+                <span t-esc="env.pos.get_client().mobile"/><br/>
+                </div>
+        </t>
             
             
             
