@@ -7,7 +7,7 @@
 
          <div>111</div>   
 
-            <div t-if="receipt.partner" class="partner-name" style="margin-bottom: 10px;">
+            <div t-if="receipt.partner" class="partner-name" >
                 <strong>Customer:</strong> <span t-esc="receipt.partner.name"/>
             </div>
             
