@@ -12,15 +12,15 @@
                 <span t-esc="env.pos.get_client().name"/><br/>
             </div>
         </t>
-              <div style="margin-bottom: 9px;">
+              
         <t t-if="env.pos.get_client().phone">
-              Teléfono: 
+              <div style="margin-bottom: 9px;">Teléfono: 
                 <span t-esc="env.pos.get_client().phone"/><br/>
-                
+        </div>        
                 
         </t>
         <span>-------------------------------------------------------------</span>
-        </div>
+        
             
             
         </xpath>
