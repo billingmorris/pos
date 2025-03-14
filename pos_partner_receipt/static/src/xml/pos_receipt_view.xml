@@ -5,6 +5,10 @@
         <!-- Insert the partner name before the order lines -->
         <xpath expr="//div[hasclass('orderlines')]" position="before">
         <div>**************</div>
+        <t t-if="config.is_customer_name and env.pos.get_client().name">
+                <span>Name:</span>
+                <span t-esc="env.pos.get_client().name"/><br/>
+        </t>
          <div t-if="receipt.partner" class="partner-name" style="margin-bottom: 10px;">
                 <strong>Customer:</strong> <span t-esc="receipt.partner.name"/>
             </div>
