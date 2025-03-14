@@ -9,10 +9,7 @@
 
             
             
-            <!-- Check if a partner is associated with the order -->
-            <div class="partner-name" style="margin-bottom: 10px;">
-                <strong>Customer:</strong> <span t-esc="receipt.partner.name"/>
-            </div>
+            
             
         </xpath>
     </t>
