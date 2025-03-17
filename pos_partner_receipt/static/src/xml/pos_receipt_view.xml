@@ -8,16 +8,15 @@
         <span>-----------------------------------------------------</span>
         <t t-if="env.pos.get_client().name">
                 
-            <div style="margin-bottom: 9px;">Cliente: 
+            <div style="margin-bottom: 8px;">Cliente: 
                 <span t-esc="env.pos.get_client().name"/><br/>
             </div>
         </t>
               
         <t t-if="env.pos.get_client().phone">
-              <div style="margin-bottom: 9px;">Teléfono: 
+              <div style="margin-bottom: 8px;">Teléfono: 
                 <span t-esc="env.pos.get_client().phone"/><br/>
-        </div>        
-                
+              </div>         
         </t>
         <span>-----------------------------------------------------</span>
         
