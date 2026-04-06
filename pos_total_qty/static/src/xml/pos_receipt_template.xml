@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <template id="pos_receipt_inherit" inherit_id="point_of_sale.pos_ticket">
+<templates id="template" xml:space="preserve">
 
-        <xpath expr="//div[@class='receipt-main']/div[last()]" position="after">
+    <!-- Insertar total_qty en el ticket -->
+    <t t-name="pos_total_qty.TicketPatch" t-inherit="point_of_sale.TicketScreen" t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'receipt-paymentlines')]" position="after">
             <div class="pos-total-qty">
-                <strong>Total productos: </strong>
+                <strong>Total productos:</strong>
                 <t t-esc="receipt.total_qty"/>
             </div>
         </xpath>
+    </t>
 
-    </template>
-</odoo>
+</templates>
