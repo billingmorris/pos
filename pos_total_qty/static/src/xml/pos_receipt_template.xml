@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="pos_receipt_inherit" inherit_id="point_of_sale.pos_receipt">
+    <template id="pos_receipt_inherit" inherit_id="point_of_sale.pos_ticket">
 
-        <xpath expr="//div[@class='pos-receipt']" position="inside">
+        <xpath expr="//div[@class='receipt-main']/div[last()]" position="after">
             <div class="pos-total-qty">
                 <strong>Total productos: </strong>
-                <t t-esc="o.total_qty"/>
+                <t t-esc="receipt.total_qty"/>
             </div>
         </xpath>
 
